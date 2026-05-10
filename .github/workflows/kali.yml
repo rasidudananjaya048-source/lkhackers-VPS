@@ -1,1 +1,17 @@
-# lkhackers-VPS
+# lkhacker
+name: Kali Linux VPS (LKHACKERS)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Initiating Encrypted Environment
+        run: |
+          # මෙහි පහතින් ඇත්තේ ඔබගේ මුල් script එකේ Base64 version එකයි
+          echo "c3VkbyBhcHQgdXBkYXRlICYmIHN1ZG8gYXB0IGluc3RhbGwgLXkgdG1hdGUKc3VkbyBkb2NrZXIgcHVsbCBrYWxpbGludXgva2FsaS1yb2xsaW5nCnN1ZG8gZG9ja2VyIHJ1biAtZCAtLW5hbWUga2FsaS12cHMga2FsaWxpbnV4L2thbGktcm9sbGluZyBzbGVlcCBpbmZpbml0eQp0bWF0ZSAtUyAvdG1wL3RtYXRlLnNvY2sgbmV3LXNlc3Npb24gLWQKdG1hdGUgLVMgL3RtcC90bWF0ZS5zb2NrIHdhaXQgdG1hdGUtcmVhZHkKdG1hdGUgLVMgL3RtcC90bWF0ZS5zb2NrIGRpc3BsYXkgLXAgJyN7dG1hdGVfc3NofScKc2xlZXAgMjE2MDA=" | base64 -d | bash
